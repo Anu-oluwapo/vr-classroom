@@ -52,6 +52,14 @@ body {
   z-index: 29;
 }
 
+.vr-gif{
+width: 10rem;
+position: absolute;
+top: 40%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+
 .loading-number{
   position: absolute;
   bottom: 10%;
