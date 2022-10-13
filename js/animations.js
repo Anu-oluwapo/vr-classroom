@@ -2,7 +2,8 @@ let cursor = document.querySelector(".cursor"),
     follower = document.querySelector(".cursor-follower");
 
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-        document.querySelector('body').style.cursor = 'block'
+        document.querySelector('.cursor').style.display = 'none'
+        document.querySelector('.cursor-follower').style.display = 'none'
     } else{
         var posX = 0,
         posY = 0;
