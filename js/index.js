@@ -3,7 +3,7 @@ let navToggled = false;
 gsap.registerPlugin(ScrollTrigger);
 
 const menuTimeline = gsap.timeline({ duration: 0, paused: true })
-const preloadTimeline = gsap.timeline({ duration: 0 })
+const preloadTimeline = gsap.timeline({ delay: .5, duration: 0 })
 
 
 menuTimeline.from('.menu', {
@@ -44,8 +44,8 @@ preloadTimeline.to(Cont, {
   }).to('.loading-bar', {
     width: '100%',
     duration: 10,
-  },0).to('.loading-number',{
-    left: '80%',
+  },0).from('.loading-number',{
+    right: '80%',
     duration: 10,
   },0).to('.preloader',{
     y: '-100vh'
@@ -73,6 +73,48 @@ preloadTimeline.to(Cont, {
        rotate: -3,
        scrollTrigger:{
         trigger : '.section-1 .container',
+        start:'top+=10 bottom-=50',
+        
+       }
+    })
+
+    gsap.from('.section-2 p, .section-2 span, .section-2 img, .section-2 div, .section-2 button ',{
+        duration: 1, 
+        y: 80,
+        opacity: 0,
+        ease: 'power.out',
+        stagger: .1,
+       rotate: -3,
+       scrollTrigger:{
+        trigger : '.section-2 .container',
+        start:'top+=10 bottom-=50',
+        
+       }
+    })
+
+    gsap.from('.section-3 p, .section-3 span, .section-3 img, .section-3 div, .section-3 button ',{
+        duration: 1, 
+        y: 80,
+        opacity: 0,
+        ease: 'power.out',
+        stagger: .1,
+       rotate: -3,
+       scrollTrigger:{
+        trigger : '.section-3 .container',
+        start:'top+=10 bottom-=50',
+        
+       }
+    })
+
+    gsap.from('.section-4 p, .section-4 span, .section-4 img, .section-4 div, .section-4 button ',{
+        duration: 1, 
+        y: 80,
+        opacity: 0,
+        ease: 'power.out',
+        stagger: .1,
+       rotate: -3,
+       scrollTrigger:{
+        trigger : '.section-4 .container',
         start:'top+=10 bottom-=50',
         
        }

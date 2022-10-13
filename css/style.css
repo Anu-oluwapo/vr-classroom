@@ -54,8 +54,8 @@ body {
 
 .loading-number{
   position: absolute;
-  bottom: 100px;
-  left: 10px;
+  bottom: 10%;
+  right: 10px;
   display: block;
 }
 
@@ -71,19 +71,18 @@ body {
 
 .loading-bar{
   margin-top: 92vh;
-  bottom: 100px;
   height: 4px;
-  width: 10%;
+  width: 20%;
   background-color: #C4C4C4;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
 
 .cursor {
-  position: absolute;
-  background-color: rgb(0, 0, 0);
-  width: 6px;
-  height: 6px;
+  position: fixed;
+  background-color: rgb(255, 255, 255);
+  width: 8px;
+  height: 8px;
   border-radius: 100%;
   z-index: 1;
   transition: 0.3s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform,
@@ -92,6 +91,7 @@ body {
   pointer-events: none;
   z-index: 10000;
   transform: scale(1);
+  mix-blend-mode: difference;
   
 }
 
@@ -105,11 +105,11 @@ body {
 }
 
 .cursor-follower {
-  position: absolute;
+  position: fixed;
   /* background-color: rgba(255, 255, 255, 0.3); */
-  border: 1px solid black;
-  width: 20px;
-  height: 20px;
+  border: 2px solid rgb(255, 255, 255);
+  width: 30px;
+  height: 30px;
   border-radius: 100%;
   z-index: 1;
   transition: 0.6s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform,
@@ -118,11 +118,12 @@ body {
   pointer-events: none;
   z-index: 10000;
   transform: translate(5px, 5px);
+  mix-blend-mode: difference;
 }
 
 .cursor-follower.active {
-  opacity: 0.7;
-  transform: scale(3);
+  opacity: 1;
+  transform: scale(2);
 }
 
 .cursor-follower.hovered {
@@ -137,6 +138,22 @@ body {
   width: 100%;
   z-index: 10;
   display: none;
+}
+
+.menuLines{
+display: block;
+position: relative;
+}
+
+.menuLines div{
+  height: 2px;
+  background-color: black;
+  width: 100%;
+  margin: 5px 0;
+}
+
+.menuLine2{
+  width: 60% !important;
 }
 
 .menu-links{
@@ -608,6 +625,15 @@ background: #ffffff15;
 
   .feature-img {
     width: 40rem;
+  }
+
+  .loading-number{
+    bottom: 15%;
+  }
+
+  .loading-bar{
+    margin-top: 86vh;
+    
   }
 
 }
