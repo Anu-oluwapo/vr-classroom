@@ -26,10 +26,7 @@
     <div class="preloader2"></div>
     <div class="preloader3"></div>
     <div class="preloader">
-        <!-- <img class="" alt="vr robot" src="/assets/vr.gif"> -->
-        <!-- <video class="vr-gif d-block mx-auto" loop autoplay>
-            <source src="/assets/vrRobot.webm" type="video/webm">
-          </video> -->
+        
         <div class="loading-number"><p id="number">0</p><p id="percentage">%</p></div>
         <div class="loading-bar"></div>
 
@@ -84,10 +81,16 @@
         </div>
 
         <div class="hero-bottom-shadow">
-            <div class="d-flex container pt-5 ">
+            <div class="d-flex link container pt-5 " onclick="viewVideo()">
                 <img alt="Play Button" style="width: 10rem;" src="assets/play.svg" />
                 <p class="align-self-center"><b>WATCH THE VIDEO</b></p>
             </div>
+        </div>
+
+        <div class="video-container position-fixed" onclick="viewVideo()">
+            <iframe class="position-absolute video" allowfullscreen="true"
+            src="https://www.youtube.com/embed/ou2qE74vGbg">
+            </iframe>
         </div>
 
     </section>

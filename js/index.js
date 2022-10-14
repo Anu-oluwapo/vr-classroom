@@ -1,8 +1,10 @@
 
 let navToggled = false;
+let videoView = false;
 gsap.registerPlugin(ScrollTrigger);
 
 const menuTimeline = gsap.timeline({ duration: 0, paused: true })
+const videoTimeline = gsap.timeline({ duration: 0, paused: true })
 const preloadTimeline = gsap.timeline({ delay: .5, duration: 0 })
 
 
@@ -31,8 +33,30 @@ async function toggleNav() {
 
 }
 
+async function viewVideo(){
+  videoView = !videoView
+    if (!videoView) {
+        await videoTimeline.reverse()
+        document.querySelector('.video-container').style.display = 'none'
+    } else {
+      videoTimeline.play()
+      document.querySelector('.video-container').style.display = 'block'
+    }
+
+}
+
 var Cont = { val: 0 },
   NewVal = 100;
+
+  videoTimeline.from('.video-container',{
+    duration: .5,
+    opacity: 0
+  }).from('.video',{
+    duration: .5,
+    scale: 0,
+    ease: Power4.easeInOut,
+    
+  },0)
 
 preloadTimeline.to(Cont, {
     duration: 10,
